@@ -136,9 +136,9 @@ function updateWarnaStatus(button, status) {
   }
 }
 
-// Atur warna status setelah halaman dimuat
+// Atur warna Status setelah halaman dimuat
 $(document).ready(function() {
-  $(".btn-status").each(function() {
-    updateWarnaStatus($(this), $(this).attr("data-status"));
+  $(".btn-Status").each(function() {
+    updateWarnaStatus($(this), $(this).attr("data-Status"));
   });
 });
