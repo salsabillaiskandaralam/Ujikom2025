@@ -20,11 +20,11 @@
   <table class="table" id="daftar-Nama">
     <thead>
       <tr>
-        <th>Nama</th>
+        <th>Nama tugas</th>
       </tr>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nama</th>
+        <th scope="col">Nama tugas</th>
         <th scope="col" id="Prioritas">Prioritas</th>
         <th scope="col">Status</th>
         <th scope="col">Tanggal</th>
@@ -69,7 +69,7 @@
         location.reload();
       });
       
-      // Gunakan event delegation untuk ubah tugas
+      // Gunakan event delegation untuk ubah Nama
       $(document).on('click', '.ubah', function() {
         let docId = $(this).attr('data-id');
         let Nama = $(this).attr('data-Nama');

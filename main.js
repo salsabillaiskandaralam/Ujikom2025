@@ -48,14 +48,14 @@ export async function ambildaftarNama() {
 export async function tambahNama(Nama, Prioritas, Status, tanggal) {
   try {
     const dokRef = await addDoc(collection(db, 'senin'), {
-      Nama: Nama,
+      Namatugas: Nama,
       Prioritas: Prioritas,
       Status: Status,
       Tanggal: Tanggal,
     });
     console.log('berhasil menembah Nama ' + dokRef.id);
   } catch (e) {
-    console.log('gagal menambah Nama ' + e);
+    console.log('gagal menambah Nama  ' + e);
   }
 }
 
@@ -65,7 +65,7 @@ export async function hapusNama(docId) {
 
 export async function ubahNama(docId, Nama, Prioritas, Status, Tanggal) {
   await updateDoc(doc(db, "senin", docId), {
-    Nama: Nama,
+    Namatugas: Nama,
     Prioritas: Prioritas,
     Status: Status,
     Tanggal: Tanggal,

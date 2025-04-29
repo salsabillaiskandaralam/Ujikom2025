@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>todolist</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="main.js"></script>
+  <link rel="stylesheet" href="ubah.css">
+</head>
+<body class="m-4">
+  <h1>Ubah todolist</h1>
+
+  <form class="mb-3">
+    <div class="mb-3">
+      <label class="form-label">Nama tugas</label>
+      <input type="text" class="form-control" id="input-Nama tugas">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Prioritas</label>
+      <input type="text" class="form-control" id="input-Prioritas">
+    </div>
+    <form class="mb-3">
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input type="text" class="form-control" id="input-Status">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Tanggal</label>
+        <input type="text" class="form-control" id="input-Tanggal">
+      </div>
+      <button type="submit" class="btn btn-primary" id="tombol-ubah">Ubah</button>
+    </form>
+   <script type="module">
+      import { ambilNama, ubahNama } from './main.js';
+
+      let tombolubah = document.getElementById('tombol-ubah');
+      let elemenNama = document.getElementById('input-Nama');
+      let elemenPrioritas = document.getElementById('input-Prioritas');
+      let elemenStatus = document.getElementById('input-Status');
+      let elemenTanggal = document.getElementById('input-Tanggal');
+      const queryString = window.location.search;
+      const parameterURL = new URLSearchParams(queryString);
+      const docId = parameterURL.get('docId');
+      const Absensi = await ambilNama(docId);
+
+      elemenNama.value = Absensi.Nama ;
+      elemenstatus.value = Absensi.Prioritas;
+      elemenprioritas.value = Absensi.Status;
+      elemenTanggal.value = Absensi.Tanggal;
+
+
+
+      tombolubah.addEventListener('click', async function(el) {
+        el.preventDefault();
+        await ubahNama (docId, elemenNama .value, elemenPrioritas.value, elemenStatus.value, elemenTanggal.value);
+        window.location.href = 'index.html';
+      });
+    </script>
+</body>
+
+</html>
