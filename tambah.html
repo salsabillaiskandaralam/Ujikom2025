@@ -21,7 +21,7 @@
   </button>
   <ul class="dropdown-menu dropdown-menu-dark">
     <li><a class="dropdown-item active" href="index.html">back</a></li>
-</div
+</div>
 
   <form class="mb-3">
     <div class="mb-3">
@@ -36,22 +36,22 @@
     <option value="belum selesai">belum</option>
   </select>
     </div>
-    <form class="mb-3">
- <div class="mb-3">
-     <select class="form-select" aria-label="Default select example" id="input-Prioritas">
-  <option selected>Status</option>
-  <option value="tinggi🔴">tinggi</option>
-  <option value="sedang🟠">sedang</option>
-  <option value="rendah🔵">rendah</option>
-</select>
+<form>
+<div class="mb-3">
+  <select class="form-select" aria-label="Default select example" id="input-prioritas">
+    <option selected>proritas</option>
+    <option value="tinggi🔴">tinggi</option>
+    <option value="sedang🟠">sedang</option>
+    <option value="rendah🔵">rendah</option>
+  </select>
 </div>
-      <div class="mb-3">
-        <label class="form-label">Tanggal</label>
-        <input type="date" class="form-control" id="input-Tanggal">
-      </div>
+<div class="mb-3">
+  <label class="form-label">tanggal</label>
+  <input type="date" class="form-control" id="input-tanggal">
+</div>
 
-      <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
-    </form>
+<button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
+</form>
 
 
     <script type="module">
@@ -59,24 +59,24 @@
 
       let tomboltambah = document.getElementById('tombol-tambah');
       let elemenNama = document.getElementById('input-Nama ');
-      let elemenPrioritas = document.getElementById('input-Prioritas');
+      let elemenPrioritas = document.getElementById('input-prioritas');
       let elemenStatus = document.getElementById('input-Status');
-      let elementanggal = document.getElementById('input-Tanggal');
+      let elementanggal = document.getElementById('input-tanggal');
 
 
 
 
       tomboltambah.addEventListener('click', async function(e) {
         e.preventDefault();
-if (
-  elemenNama.value.trim() === '' ||
-  elemenPrioritas.value === 'Prioritas' ||
-  elemenStatus.value === 'Status' ||
-  elementanggal.value === ''
-) {
-  alert('Semua field harus diisi dengan benar!');
-  return;
-}
+//if (
+  //elemenNama.value.trim() === '' ||
+  //elemenPrioritas.value === 'Prioritas' ||
+//  elemenStatus.value === 'Status' ||
+ // elementanggal.value === ''
+//) {
+//  alert('Semua field harus diisi dengan benar!');
+//  return;
+//}
         await tambahNama(elemenNama.value,
         elemePrioritas.value, elemenStatus.value, elementanggal.value);
         window.location.href = 'index.html'
