@@ -72,13 +72,13 @@ if (
   elemenNama.value.trim() === '' ||
   elemenPrioritas.value === 'Prioritas' ||
   elemenStatus.value === 'Status' ||
-  elemenTanggal.value === ''
+  elementanggal.value === ''
 ) {
   alert('Semua field harus diisi dengan benar!');
   return;
 }
-        await tambahNama.value,
-        elemePrioritas.value, elemenstatus.value, elemenTanggal.value);
+        await tambahNama(elemenNama.value,
+        elemePrioritas.value, elemenStatus.value, elementanggal.value);
         window.location.href = 'index.html'
       })
     </script>
