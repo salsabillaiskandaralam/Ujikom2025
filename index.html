@@ -20,7 +20,7 @@
   <table class="table" id="daftar-Nama">
     <thead>
       <tr>
-        <th>Nama tugas</th>
+        <th>To Do List</th>
       </tr>
       <tr>
         <th scope="col">#</th>
@@ -77,7 +77,8 @@
         let Status = $(this).attr('data-Status');
         let Tanggal = $(this).attr('data-Tanggal');
         
-        window.location.replace(`ubahNamw.html?docId=${docId}&Nama=${Nama}&Prioritas=${Status}&Status=${Prioritas}&Tanggal=${Tanggal}`);
+      window.location.replace(`ubah.html?docId=${docId}&Nama=${Nama}&Status=${Status}&Prioritas=${Prioritas}&Tanggal=${Tanggal}`);
+      
       });
     });
   </script>

@@ -27,7 +27,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function ambildaftarNama() {
-  const refDokumen = collection(db, "Todolist");
+  const refDokumen = collection(db, "todolist");
   const kueri = query(refDokumen, orderBy("Nama"));
   const cuplikankueri = await getDocs(kueri);
   
@@ -45,13 +45,13 @@ export async function ambildaftarNama() {
   return hasil;
 }
 
-export async function tambahNama(Nama, Prioritas, Status, tanggal) {
+export async function tambahNama(Nama, Prioritas, Status, Tanggal) {
   try {
-    const dokRef = await addDoc(collection(db, 'senin'), {
-      Namatugas: Nama,
+    const dokRef = await addDoc(collection(db, 'todolist'), {
+      Nama: Nama,
       Prioritas: Prioritas,
       Status: Status,
-      Tanggal: Tanggal,
+      Tanggal: Tanggal
     });
     console.log('berhasil menembah Nama ' + dokRef.id);
   } catch (e) {
@@ -60,12 +60,12 @@ export async function tambahNama(Nama, Prioritas, Status, tanggal) {
 }
 
 export async function hapusNama(docId) {
-  await deleteDoc(doc(db, "Nama", docId));
+  await deleteDoc(doc(db, "todolist", docId));
 }
 
 export async function ubahNama(docId, Nama, Prioritas, Status, Tanggal) {
-  await updateDoc(doc(db, "senin", docId), {
-    Namatugas: Nama,
+  await updateDoc(doc(db, "todolist", docId), {
+    Nama: Nama,
     Prioritas: Prioritas,
     Status: Status,
     Tanggal: Tanggal,
@@ -73,7 +73,7 @@ export async function ubahNama(docId, Nama, Prioritas, Status, Tanggal) {
 }
 
 export async function ambilNama(docId) {
-  const docRef = await doc(db, "Nama", docId);
+  const docRef = await doc(db, "todolist", docId);
   const docSnap = await getDoc(docRef);
   
   return await docSnap.data();

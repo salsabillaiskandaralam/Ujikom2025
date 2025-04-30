@@ -20,7 +20,7 @@
   <form class="mb-3">
     <div class="mb-3">
       <label class="form-label">Nama tugas</label>
-      <input type="text" class="form-control" id="input-Nama tugas">
+      <input type="text" class="form-control" id="input-Nama">
     </div>
     <div class="mb-3">
       <label class="form-label">Prioritas</label>
@@ -50,9 +50,9 @@
       const docId = parameterURL.get('docId');
       const Absensi = await ambilNama(docId);
 
-      elemenNama.value = Absensi.Nama ;
-      elemenstatus.value = Absensi.Prioritas;
-      elemenprioritas.value = Absensi.Status;
+      elemenNama.value = Absensi.Nama;
+      elemenStatus.value = Absensi.Prioritas;
+      elemenPrioritas.value = Absensi.Status;
       elemenTanggal.value = Absensi.Tanggal;
 
 
